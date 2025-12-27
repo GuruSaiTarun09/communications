@@ -8,6 +8,7 @@ import { CreateproductComponent } from './components/createproduct/createproduct
 import { AllproductsComponent } from './components/allproducts/allproducts.component';
 import { ViewproductComponent } from './components/viewproduct/viewproduct.component';
 import { CreatebuttonComponent } from './components/createbutton/createbutton.component';
+import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CreatebuttonComponent } from './components/createbutton/createbutton.co
     CreateproductComponent,
     AllproductsComponent,
     ViewproductComponent,
-    CreatebuttonComponent
+    CreatebuttonComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
