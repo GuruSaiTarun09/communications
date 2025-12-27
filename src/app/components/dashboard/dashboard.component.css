@@ -1,0 +1,11 @@
+.shopping-container{
+  background: #001f2b;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
