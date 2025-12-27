@@ -1,1 +1,13 @@
-<p>allproducts works!</p>
+<div class="parent">
+    <h3>All Products</h3>
+
+    <div *ngFor="let p of productList; let i=index">
+        <p>Name: {{p.name}}</p>
+        <p>Price: {{p.price}}</p>
+        <p>Rating: {{p.rating}}</p>
+        <app-rating [rate]="p.rating"></app-rating>
+        <button (click)="onView.emit(p)">View</button>
+        <button (click)="onDelete.emit(i)">Delete</button>
+    </div>
+
+</div>

@@ -12,21 +12,18 @@ interface Product {
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-    products: Product[] = [];
-  selectedProduct!: Product | null;
+ productList:any[] = [];
+  selectedProduct:any = null;
 
-  addProduct(product: Product) {
-    this.products.push(product);
+  addProduct(p:any){
+    this.productList.push(p);
   }
 
-  viewProduct(product: Product) {
-    this.selectedProduct = product;
+  viewProduct(p:any){
+    this.selectedProduct = p;
   }
 
-  deleteProduct(id: number) {
-    this.products = this.products.filter(p => p.id !== id);
-    if (this.selectedProduct?.id === id) {
-      this.selectedProduct = null;
-    }
+  deleteProduct(index:number){
+    this.productList.splice(index,1);
   }
 }

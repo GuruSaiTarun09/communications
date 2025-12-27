@@ -1,9 +1,16 @@
 <div class="shopping-container">
   <h1>Shopping Component</h1>
 
-  <div class="grid">
-    <app-createproduct></app-createproduct>
-    <app-allproducts></app-allproducts>
-    <app-viewproduct></app-viewproduct>
-  </div>
+  <app-createproduct (newProduct)="addProduct($event)"></app-createproduct>
+
+  <app-allproducts 
+      [productList]="productList"
+      (onView)="viewProduct($event)"
+      (onDelete)="deleteProduct($event)">
+  </app-allproducts>
+
+  <app-viewproduct 
+      [product]="selectedProduct">
+  </app-viewproduct>
 </div>
+

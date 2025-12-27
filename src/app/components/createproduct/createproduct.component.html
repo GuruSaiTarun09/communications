@@ -1,1 +1,12 @@
-<p>createproduct works!</p>
+<div class="parent">
+<h3>Create Product</h3>
+<label for="name">Name:</label>
+<input id="name" placeholder="Enter product Name" [(ngModel)]="name" > <br><br>
+<label for="price">Price:</label>
+<input id="price" placeholder="Enter product Price" [(ngModel)]="price" > <br><br>
+<label for="rating">Rating:</label>
+<input id="rating" placeholder="Enter product Rating" [(ngModel)]="rating" > <br><br>
+<label for="image">Image URL:</label>
+<input id="image" placeholder="Enter product Image URL" [(ngModel)]="image" > <br><br>
+<button (click)="create()">Create Product</button>
+</div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-viewproduct',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./viewproduct.component.css']
 })
 export class ViewproductComponent {
-
+    @Input() product: any;
 }

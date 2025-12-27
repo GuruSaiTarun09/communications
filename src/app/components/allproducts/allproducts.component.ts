@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-allproducts',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./allproducts.component.css']
 })
 export class AllproductsComponent {
-
+@Input() productList:any[] = [];
+@Output() onView = new EventEmitter<any>();
+@Output() onDelete = new EventEmitter<number>();
 }
