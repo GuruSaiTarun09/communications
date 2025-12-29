@@ -7,7 +7,10 @@ import { ProductService } from 'src/app/Services/product.service';
   styleUrls: ['./allproducts.component.css']
 })
 export class AllproductsComponent {
-@Input() productList:any[] = [];
-@Output() onView = new EventEmitter<any>();
-@Output() onDelete = new EventEmitter<number>();
+
+ @Input() productList: any[] = [];
+  @Output() viewProduct = new EventEmitter<any>();
+  @Output() deleteProduct = new EventEmitter<number>();
+product: any;
+
 }

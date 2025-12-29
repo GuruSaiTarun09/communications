@@ -1,29 +1,36 @@
 import { Component } from '@angular/core';
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-}
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
- productList:any[] = [];
-  selectedProduct:any = null;
+products: any[] = [];
 
-  addProduct(p:any){
-    this.productList.push(p);
-  }
+selectedName: string = '';
+selectedPrice: any;
+selectedRating: any;
+selectedImage: string = '';
 
-  viewProduct(p:any){
-    this.selectedProduct = p;
-  }
+selectedProduct: any = null;
 
-  deleteProduct(index:number){
-    this.productList.splice(index,1);
-  }
+onGetFormData(data: any) {
+  this.selectedName = data.name;
+  this.selectedPrice = data.price;
+  this.selectedRating = data.rating;
+  this.selectedImage = data.image;
+}
+
+onCreateProduct(product: any) {
+  this.products.push(product);
+}
+
+onView(product: any) {
+  this.selectedProduct = product;
+}
+
+onDelete(i: number) {
+  this.products.splice(i, 1);
+}
 }

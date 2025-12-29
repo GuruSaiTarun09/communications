@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
@@ -7,15 +7,20 @@ import { ProductService } from 'src/app/Services/product.service';
   styleUrls: ['./createbutton.component.css']
 })
 export class CreatebuttonComponent {
- @Input() product: any; 
-  @Input() index: number | undefined; 
+   @Input() name: string = "";
+  @Input() price: any;
+  @Input() rating: any;
+  @Input() image: string = "";
 
-  constructor(public prodService:ProductService){}
+  @Output() createProductEvent = new EventEmitter<any>();
 
-  create() {
-    if(this.product){
-      this.prodService.addProduct(this.product); 
-      alert("Product Created Successfully!");
-    }
+  createProduct() {
+    const product = {
+      name: this.name,
+      price: this.price,
+      rating: this.rating,
+      image: this.image
+    };
+    this.createProductEvent.emit(product);
   }
 }

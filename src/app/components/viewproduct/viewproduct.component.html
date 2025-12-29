@@ -1,11 +1,9 @@
 <div class="parent">
-<h3>View Product</h3>
-<div *ngIf="product">
-  <img [src]="product.image" width="120">
-  <p>Name: {{product.name}}</p>
-  <p>Price: {{product.price}}</p>
-  <p>Rating: {{product.rating}}</p>
-  <app-rating [rate]="product.rating ?? 0"></app-rating>
-</div>
-
+  <h3>View Product</h3>
+  <div *ngIf="product">
+    <img [src]="product.image" width="100"><br>
+    Name: {{product.name}} <br>
+    Price: {{product.price}} <br>
+    Rating: <app-rating [rate]="product.rating"></app-rating>
+  </div>
 </div>

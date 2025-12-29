@@ -1,16 +1,34 @@
 <div class="shopping-container">
-  <h1>Shopping Component</h1>
+  <h2 class="title">Shopping Component</h2>
+  <div class="row-container">
+    <!-- Create Product -->
+    <div class="box">
+      <div class="box-header">Create Product</div>
+      <app-createproduct (sendProduct)="onGetFormData($event)"></app-createproduct>
+      <app-createbutton 
+        [name]="selectedName"
+        [price]="selectedPrice"
+        [rating]="selectedRating"
+        [image]="selectedImage"
+        (createProductEvent)="onCreateProduct($event)">
+      </app-createbutton>
+    </div>
 
-  <app-createproduct (newProduct)="addProduct($event)"></app-createproduct>
+    <!-- Cart -->
+    <div class="box">
+      <div class="box-header">Cart 🛒</div>
+      <app-allproducts 
+        [productList]="products" 
+        (viewProduct)="onView($event)" 
+        (deleteProduct)="onDelete($event)">
+      </app-allproducts>
+    </div>
 
-  <app-allproducts 
-      [productList]="productList"
-      (onView)="viewProduct($event)"
-      (onDelete)="deleteProduct($event)">
-  </app-allproducts>
+    <!-- View Product -->
+    <div class="box">
+      <div class="box-header">View 🔍</div>
+      <app-viewproduct [product]="selectedProduct"></app-viewproduct>
+    </div>
 
-  <app-viewproduct 
-      [product]="selectedProduct">
-  </app-viewproduct>
+  </div>
 </div>
-

@@ -1,7 +1,4 @@
-<div class="product-card">
-  <h4>{{ product?.name }}</h4>
-  <p *ngIf="product?.description">{{ product.description }}</p>
-  <small>Index: {{ index }}</small>
-  <br><br>
-  <button (click)="create()">Create Product</button>
+<div class="parent">
+  <h4>Do you want to create {{ name }} ?</h4>
+  <button (click)="createProduct()">Create</button>
 </div>

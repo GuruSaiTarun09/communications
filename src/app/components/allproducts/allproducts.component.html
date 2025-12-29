@@ -1,13 +1,12 @@
 <div class="parent">
-    <h3>All Products</h3>
+  <h3>All Products</h3>
 
-    <div *ngFor="let p of productList; let i=index">
-        <p>Name: {{p.name}}</p>
-        <p>Price: {{p.price}}</p>
-        <p>Rating: {{p.rating}}</p>
-        <app-rating [rate]="p.rating"></app-rating>
-        <button (click)="onView.emit(p)">View</button>
-        <button (click)="onDelete.emit(i)">Delete</button>
-    </div>
-
+  <div *ngFor="let p of productList; let i = index" class="card">
+    <h4>Name: {{ p.name }}</h4>
+    <p>Price: {{ p.price }}</p>
+    <p>Rating: {{p.rating}}</p>
+    Rating: <app-rating [rate]="p.rating"></app-rating><br><br>
+    <button (click)="viewProduct.emit(p)">View</button>
+    <button (click)="deleteProduct.emit(i)">Delete</button>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
@@ -7,21 +7,20 @@ import { ProductService } from 'src/app/Services/product.service';
   styleUrls: ['./createproduct.component.css']
 })
 export class CreateproductComponent {
- @Output() newProduct = new EventEmitter<any>();
+ @Output() sendProduct = new EventEmitter<any>();
 
-  name:string='';
-  price:number=0;
-  rating:number=0;
-  image:string='';
+  name: string = "";
+  price: any;
+  rating: any;
+  image: string = "";
 
-  create(){
-    const p = {
+  sendData() {
+    const data = {
       name: this.name,
       price: this.price,
       rating: this.rating,
       image: this.image
     };
-    this.newProduct.emit(p); // send data to parent
-    alert("Product Added!");
+    this.sendProduct.emit(data);
   }
-}
+  }

@@ -1,17 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
   templateUrl: './rating.component.html',
-  template: `<span *ngFor="let r of stars" style="color:gold;">★</span>`,
   styleUrls: ['./rating.component.css']
 })
 export class RatingComponent {
-  @Input() rate!: number;
-  stars:Array<number> = [];
-price: any;
+ @Input() rate: number = 0;
 
-  ngOnChanges(){
-    this.stars = Array(this.rate).fill(0);
+  get stars() {
+    return Array.from({ length: this.rate });
   }
 }
